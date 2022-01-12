@@ -153,7 +153,7 @@
 
         <script>
             document.getElementById("quiz").addEventListener('click', feladat);
-            let all = 0;
+            let ossz = 0;
 
             const answers = [{
                 test: 'test1',
@@ -170,12 +170,12 @@
             }, ]
 
             function feladat(e) {
-                if (all == 0) {
+                if (ossz == 0) {
                     document.getElementById("js").style.display = "none";
-                    all = 1;
+                    ossz = 1;
                 } else {
                     document.getElementById("js").style.display = "block";
-                    all = 0
+                    ossz = 0
                 }
 
             }
@@ -202,10 +202,10 @@
 
                 if (ertek == jo) {
                     document.getElementById(gombok[i].id).nextElementSibling.style.color = "green";
-                    //console.log("jo")
+
                 } else {
                     document.getElementById(gombok[i].id).nextElementSibling.style.color = "red";
-                    //console.log("rossz")
+
                 }
 
             }
