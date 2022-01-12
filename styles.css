@@ -3,25 +3,25 @@ body {
     background-size: cover;
     background-image: url("TypeScriptBack.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 p {
     margin: 5px;
+    text-indent: 20px;
     text-align: justify;
     line-height: 120%;
+    text-indent: 0%;
 }
 
 #content {
     margin-bottom: 20px;
     margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 30px;
-    width: 80%;
-    padding: 30px;
-    /*Nem tudtam középre elhelyezni*/
+    max-width: 80%;
+    margin: 30px auto;
 }
 
 a {
@@ -64,7 +64,7 @@ tr,
 td {
     border: 1px solid gray;
     text-align: center;
-    padding: 5px;
+    margin: 5px;
 }
 
 thead {
@@ -75,4 +75,26 @@ thead {
 a:hover {
     color: #087AC8;
     text-decoration: none;
+}
+
+#quiz {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
+#js {
+    display: none;
+}
+
+.fcel {
+    border: 2px solid blue;
+}
+
+.gomb {
+    background-color: #087AC8;
+    border-radius: 4px;
+    color: white;
 }

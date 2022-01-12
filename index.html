@@ -12,7 +12,7 @@
 
 <body>
     <div id="content">
-        <img src="TypeScriptLogo.png" alt="TS logo" id="picture">
+        <img src="TypeScriptLogo.png" alt="TS logo" title="TS logo" id="picture">
         <h1> <a href="https://www.tutorialspoint.com/typescript/typescript_operators.htm" target="blank">TypeScript - Operators</a></h1>
         <h2>What is an Operator? </h2>
 
@@ -101,13 +101,118 @@
 
             </tbody>
         </table>
+        <div id="quiz">Test yourself! Relational operators in JAVA</div>
+        <div class="container" id="js">
+            <div class="row">
+                <div class="col-md-6 fcel"><img src="test1.jpg" class="img-fluid" alt="elso">
+                    <form>
+                        <input type="radio" id="true" name="test1" value="A"><label for="true">True</label><br>
+                        <input type="radio" id="false" name="test1" value="B"><label for="false">False</label><br>
+                        <input type="radio" id="error" name="test1" value="C"><label for="compiler_error">Compiler error</label><br>
+                        <input type="radio" id="none" name="test1" value="D"><label for="none">None of the above</label><br>
+                        <input type="button" name="Verify" value="Verify" class="gomb" onclick="listener('test1')">
+                    </form>
+                </div>
+                <div class="col-md-6 fcel"><img src="test2.jpg" class="img-fluid" alt="masodik">
+                    <form>
+                        <input type="radio" id="pizza5" name="test2" value="A"><label for="pizza5">PIZZA = 5</label><br>
+                        <input type="radio" id="pizza6" name="test2" value="B"><label for="pizza6">PIZZA = 6</label><br>
+                        <input type="radio" id="burger5" name="test2" value="C"><label for="burger5">BURGER = 5</label><br>
+                        <input type="radio" id="burger6" name="test2" value="D"><label for="burger6">BURGER = 6</label><br>
+                        <input type="button" name="Verify" value="Verify" class="gomb" onclick="listener('test2')">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 fcel"><img src="test3.jpg" class="img-fluid" alt="harmadik">
+                    <form>
+                        <input type="radio" id="higher" name="test3" value="A"><label for="higher">(==,!=) higher priority</label><br>
+                        <input type="radio" id="lower" name="test3" value="B"><label for="lower">(==,!=) lower priority</label><br>
+                        <input type="radio" id="equal" name="test3" value="C"><label for="equal">equal prority</label><br>
+                        <input type="radio" id="none1" name="test3" value="D"><label for="none1">None of the above</label><br>
+                        <input type="button" name="Verify" value="Verify" class="gomb" onclick="listener('test3')">
+                    </form>
+                </div>
+                <div class="col-md-6 fcel"><img src="test4.jpg" class="img-fluid" alt="negyedik">
+                    <form>
+                        <input type="radio" id="hatos" name="test4" value="A"><label for="hatos">6</label><br>
+                        <input type="radio" id="hetes" name="test4" value="B"><label for="hetes">7</label><br>
+                        <input type="radio" id="nyolcas" name="test4" value="C"><label for="nyolcas">8</label><br>
+                        <input type="radio" id="error1" name="test4" value="D"><label for="error1">Compiler error</label><br>
+                        <input type="button" name="Verify" value="Verify" class="gomb" onclick="listener('test4')">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <script src="bootstrap-4.4.1-dist/js/jquery.min.js"></script>
+        <script src="bootstrap-4.4.1-dist/js/tether.min.js"></script>
+        <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+        <script src="bootstrap-4.4.1-dist/js/jquery.easing.min.js"></script>
 
 
-    </div>
-    <script src="bootstrap-4.4.1-dist/js/jquery.min.js"></script>
-    <script src="bootstrap-4.4.1-dist/js/tether.min.js"></script>
-    <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
-    <script src="bootstrap-4.4.1-dist/js/jquery.easing.min.js"></script>
+        <script>
+            document.getElementById("quiz").addEventListener('click', feladat);
+            let all = 0;
+
+            const answers = [{
+                test: 'test1',
+                answer: 'B'
+            }, {
+                test: 'test2',
+                answer: 'A'
+            }, {
+                test: 'test3',
+                answer: 'B'
+            }, {
+                test: 'test4',
+                answer: 'B'
+            }, ]
+
+            function feladat(e) {
+                if (all == 0) {
+                    document.getElementById("js").style.display = "none";
+                    all = 1;
+                } else {
+                    document.getElementById("js").style.display = "block";
+                    all = 0
+                }
+
+            }
+
+            function listener(nev) {
+                var gombok = document.getElementsByName(nev);
+                var ertek;
+                var i = 0;
+                for (let i = 0; i < gombok.length; i++) {
+                    document.getElementById(gombok[i].id).nextElementSibling.style.color = "black";
+
+                }
+                while (i < gombok.length && !gombok[i].checked) {
+                    i = i + 1;
+                }
+                if (i < gombok.length) {
+                    ertek = gombok[i].value;
+                }
+                for (let i = 0; i < answers.length; i++) {
+                    if (answers[i].test == nev)
+                        elem = i;
+                }
+                jo = answers[elem].answer
+
+                if (ertek == jo) {
+                    document.getElementById(gombok[i].id).nextElementSibling.style.color = "green";
+                    //console.log("jo")
+                } else {
+                    document.getElementById(gombok[i].id).nextElementSibling.style.color = "red";
+                    //console.log("rossz")
+                }
+
+            }
+        </script>
+
+
+
 </body>
 
 </html>
